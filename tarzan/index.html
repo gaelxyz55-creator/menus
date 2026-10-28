@@ -114,15 +114,15 @@ input:focus,textarea:focus{outline:none;border-color:var(--c-acc)}
     <div class="hd"><div>
       <div class="logo"><img src="logo.jpg" alt="Tacos Tarzan, desde 2006"></div>
       <div class="lema">Tacos de guisos y al vapor</div>
-      <div class="when">Lunes a sábado · 8:00 a.m. a 1:00 p.m.<br>Lomas de la Paz y Hacienda El Campanario</div>
+      <div class="when">Lunes a sábado · 8 am a 1 pm</div>
       <div class="estado" id="estado"><i></i><span>Revisando horario…</span></div>
     </div><img class="tz" src="tarzan.png" alt="Tarzan, el taquero, saludando"></div>
   </header>
   <div class="hero"><img src="vapor.jpg" alt="Orden de tacos al vapor con salsa verde"><span>Recién salidos del vapor</span></div>
-  <div class="bbq"><b>Barbacoa</b> viernes y sábados. Pregúntala por WhatsApp.</div>
+  <div class="bbq"><b>Barbacoa</b> viernes y sábado · pregúntala</div>
   <main id="menu"></main>
-  <div class="info"><span>Servicio a domicilio · llamadas y WhatsApp</span><b>81 3106 5780</b>
-    <span style="font-size:14px;opacity:.9">Carretera a Villa Juárez, Lomas de la Paz · en El Campanario, enfrente de la privada Cerezo</span></div>
+  <div class="info"><span>A domicilio o pasas por él</span><b>81 3106 5780</b>
+    <span style="font-size:14px;opacity:.9">Lomas de la Paz y Hacienda El Campanario</span></div>
   <p class="pie">Pides aquí y tu pedido llega a WhatsApp de Tacos Tarzan.<br>Menú digital hecho por <b>Gael García · Contenido para negocios</b></p>
 </div>
 <div class="bar"><div class="in">
@@ -149,11 +149,8 @@ input:focus,textarea:focus{outline:none;border-color:var(--c-acc)}
 
   <div class="lbl">¿Cómo lo quieres?</div>
   <div class="modo"><button class="chip" id="m-rec" aria-pressed="true">Paso por él</button><button class="chip" id="m-dom" aria-pressed="false">A domicilio</button></div>
-  <div id="caja-rec"><div class="lbl">¿Cuándo pasas?</div><select id="hora"><option>Lo antes posible</option><option>En 30 minutos</option><option>En 1 hora</option></select></div>
   <div id="caja-dir" hidden>
-    <div class="lbl">Dirección</div><textarea id="dir" placeholder="Calle, número, colonia y entre qué calles"></textarea>
-    <div class="lbl">Referencia</div><input id="ref" placeholder="Ej. casa blanca con portón negro">
-    <button class="ubic" id="ubic">📍 Mandar mi ubicación (opcional)</button>
+    <div class="lbl">¿A dónde te lo llevan?</div><textarea id="dir" placeholder="Calle, número, colonia y una seña (ej. casa blanca, portón negro)"></textarea>
   </div>
 
   <div class="lbl">Tu nombre</div>
@@ -168,10 +165,11 @@ input:focus,textarea:focus{outline:none;border-color:var(--c-acc)}
     <div class="cambio" id="cambio"></div>
   </div>
   <div class="caja" id="caja-tra" hidden>
-    <b>Transfiere a esta cuenta:</b>
+    <div id="t-con"><b>Transfiere a esta cuenta:</b>
     <div class="tdatos" id="t-datos"></div>
-    <button class="copiar" id="t-copiar">Copiar número</button>
-    <div class="tpasos">1. Manda tu pedido. &nbsp;2. Transfiere. &nbsp;3. Manda tu captura (aquí abajo o por WhatsApp). Tu pedido se prepara al ver el pago.</div>
+    <button class="copiar" id="t-copiar">Copiar número</button></div>
+    <div id="t-sin" hidden><b>Te pasan los datos de la cuenta por WhatsApp</b> al recibir tu pedido.</div>
+    <div class="tpasos">Manda tu pedido, transfiere y manda tu captura por WhatsApp. Se prepara al ver el pago.</div>
   </div>
   <div class="caja" id="caja-tar" hidden><b>Tarjeta:</b> se cobra con terminal al entregar o al pasar por él.</div>
 
@@ -202,14 +200,14 @@ var CONFIG={negocio:"Tacos Tarzan",clave:"TZ",whats:"528131065780",
   transferencia:null};                                     // se prende cuando Tarzan pase banco, titular y número
 var MENU=[
  {sec:"Al vapor",sub:"La orden surtida o de un solo guiso",items:[
-  {id:"vapor",n:"Orden de vapor",x:"Escoge uno o varios",p:40,opts:[{lbl:"De qué los quieres",corto:"Vapor",choices:VAPOR,max:4,req:true}]}]},
+  {id:"vapor",n:"Orden de vapor",x:"Hasta 2 sabores por orden",p:40,opts:[{lbl:"De qué los quieres",corto:"Vapor",choices:VAPOR,max:2,req:true}]}]},
  {sec:"De guiso",sub:"En tortilla de harina o de maíz",items:[
-  {id:"guiso",n:"Orden de guisos",x:"Escoge uno o varios",p:null,opts:[{lbl:"Tus guisos",corto:"Guisos",choices:GUISOS,max:7,req:true},{lbl:"Tortilla",corto:"Tortilla",choices:["Harina","Maíz"],max:1,req:true}]}]},
+  {id:"guiso",n:"Orden de guisos",x:"Hasta 2 guisos por orden",p:null,opts:[{lbl:"Tus guisos",corto:"Guisos",choices:GUISOS,max:2,req:true},{lbl:"Tortilla",corto:"Tortilla",choices:["Harina","Maíz"],max:1,req:true}]}]},
  {sec:"La especial",sub:"La favorita de la casa",items:[
-  {id:"esp",n:"Especial",x:"Vapor de frijol y/o papa con guisos",p:60,opts:[{lbl:"Vapor de",corto:"Vapor",choices:["Frijol","Papa"],max:2,req:true},{lbl:"Con qué guisos",corto:"Guisos",choices:GUISOS,max:7,req:true}]}]}];
+  {id:"esp",n:"Especial",x:"Vapor de frijol o papa con 1 guiso",p:60,opts:[{lbl:"Vapor de",corto:"Vapor",choices:["Frijol","Papa"],max:1,req:true},{lbl:"Con qué guiso",corto:"Guiso",choices:GUISOS,max:1,req:true}]}]}];
 </script>
 <script>
-/* ===== MOTOR DEL MENÚ DIGITAL · estándar Gael García (v1, 28-oct-2026) =====
+/* ===== MOTOR DEL MENÚ DIGITAL · estándar Gael García (v1.1, 28-oct-2026: sin «¿cuándo pasas?», una sola dirección, transferencia sin datos) =====
    No se toca por cliente. Lo de cada negocio va en CONFIG y MENU (arriba de este bloque). */
 (function(){
   var C=CONFIG, WHATS=C.whats, LS="menu-"+C.clave;
@@ -290,12 +288,14 @@ var MENU=[
   });
 
   // ---- Pedido: entrega y pago
-  var modo="recoger", pago=null, ubic="", folio="";
+  var modo="recoger", pago=null, folio="";
   if(!C.domicilio) $("m-dom").style.display="none";
   var T=C.transferencia, NOM={efectivo:"Efectivo",transferencia:"Transferencia",tarjeta:"Tarjeta"};
-  var hay={efectivo:!!C.pagos.efectivo, transferencia:!!(C.pagos.transferencia&&T&&T.cuenta), tarjeta:!!C.pagos.tarjeta};
+  var conDatos=!!(T&&T.cuenta);
+  var hay={efectivo:!!C.pagos.efectivo, transferencia:!!C.pagos.transferencia, tarjeta:!!C.pagos.tarjeta};
+  $("t-con").hidden=!conDatos; $("t-sin").hidden=conDatos;
   $("pagos").innerHTML=Object.keys(NOM).filter(function(k){return hay[k];}).map(function(k){return '<button class="chip" data-pago="'+k+'" aria-pressed="false">'+NOM[k]+'</button>';}).join("");
-  if(hay.transferencia){
+  if(hay.transferencia&&conDatos){
     $("t-datos").innerHTML='<div><small>Banco</small><b>'+esc(T.banco)+'</b></div><div><small>A nombre de</small><b>'+esc(T.titular)+'</b></div><div><small>'+esc(T.tipo||"Número")+'</small><b id="t-num">'+esc(T.cuenta)+'</b></div>'+(T.nota?'<div class="tnota">'+esc(T.nota)+'</div>':'');
     $("t-copiar").addEventListener("click",function(){
       var n=T.cuenta.replace(/\s/g,""), b=$("t-copiar");
@@ -311,7 +311,7 @@ var MENU=[
   function pagaCon(){return parseInt(($("paga").value||"").replace(/[^\d]/g,""),10)||0;}
   function pinta(){
     $("m-rec").setAttribute("aria-pressed",modo==="recoger");$("m-dom").setAttribute("aria-pressed",modo==="domicilio");
-    $("caja-dir").hidden=modo!=="domicilio"; $("caja-rec").hidden=modo!=="recoger";
+    $("caja-dir").hidden=modo!=="domicilio";
     var dom=modo==="domicilio"&&C.domicilio;
     $("fila-envio").hidden=!dom; $("costo-envio").textContent=C.envio?money(C.envio):"por confirmar";
     $("tot2").textContent=money(totalFinal())+(sinPrecio()||(dom&&!C.envio)?" + lo que falta":"");
@@ -331,15 +331,6 @@ var MENU=[
   }
   $("rapidos").addEventListener("click",function(e){var b=e.target.closest("[data-v]");if(!b)return;$("paga").value=b.dataset.v;$("p-err").textContent="";pinta();});
   $("paga").addEventListener("input",function(){$("p-err").textContent="";pinta();});
-  $("ubic").addEventListener("click",function(){
-    var b=$("ubic");
-    if(!navigator.geolocation){b.textContent="Tu celular no deja mandar la ubicación; escribe bien la referencia";return;}
-    b.textContent="Buscando tu ubicación…";
-    navigator.geolocation.getCurrentPosition(function(p){
-      ubic="https://maps.google.com/?q="+p.coords.latitude.toFixed(6)+","+p.coords.longitude.toFixed(6);
-      b.textContent="📍 Ubicación lista (va en tu pedido)";b.classList.add("ok");
-    },function(){b.textContent="No se pudo; escribe bien la referencia";},{enableHighAccuracy:true,timeout:12000});
-  });
   function render(){
     var n=count();
     $("cnt").textContent=n?(n+(n===1?" producto":" productos")):"Tu pedido está vacío";
@@ -362,10 +353,10 @@ var MENU=[
     if(modo==="domicilio") t+="Envío a domicilio — "+(C.envio?money(C.envio):"por confirmar")+"\n";
     t+="\n*Total: "+money(totalFinal())+(sinPrecio()||(modo==="domicilio"&&!C.envio)?" + lo que falta de precio":"")+"*\n";
     t+="\n👤 "+$("nombre").value.trim();
-    if(modo==="domicilio"){t+="\n🛵 A domicilio: "+$("dir").value.trim(); var r=$("ref").value.trim(); if(r) t+="\n   Referencia: "+r; if(ubic) t+="\n   Ubicación: "+ubic;}
-    else t+="\n🏃 Paso por él: "+$("hora").value.toLowerCase();
+    if(modo==="domicilio") t+="\n🛵 A domicilio: "+$("dir").value.trim();
+    else t+="\n🏃 Paso por él";
     if(pago==="efectivo"){var p=pagaCon(),Tt=totalFinal(); t+="\n💵 Efectivo: "+(sinPrecio()?"paga con "+money(p):(p===Tt?"paga exacto":"paga con "+money(p)+" → cambio "+money(p-Tt)));}
-    if(pago==="transferencia") t+="\n🏦 Transferencia a "+T.banco+": te mando la captura";
+    if(pago==="transferencia") t+=conDatos?"\n🏦 Transferencia a "+T.banco+": te mando la captura":"\n🏦 Transferencia: pásame los datos de la cuenta y te mando la captura";
     if(pago==="tarjeta") t+="\n💳 Tarjeta: con terminal";
     var nota=$("nota").value.trim(); if(nota) t+="\n📝 "+nota;
     return t;
@@ -400,7 +391,7 @@ var MENU=[
     } else { m.textContent="Tu celular no deja mandarla desde aquí: ábrela en el chat de WhatsApp de "+C.negocio+" y mándala ahí."; }
   });
   $("cap-chat").addEventListener("click",function(){abreWhats("Te mando la captura de mi transferencia del pedido "+folio+" 👇");});
-  $("nuevo").addEventListener("click",function(){cart=[];folio="";pago=null;ubic="";["paga","nota","dir","ref"].forEach(function(id){$(id).value="";});$("ubic").classList.remove("ok");$("ubic").textContent="📍 Mandar mi ubicación (opcional)";$("enviado").hidden=true;try{localStorage.removeItem(LS+"-enviado");}catch(e){}save();render();cerrar("v-pedido");});
+  $("nuevo").addEventListener("click",function(){cart=[];folio="";pago=null;["paga","nota","dir"].forEach(function(id){$(id).value="";});$("enviado").hidden=true;try{localStorage.removeItem(LS+"-enviado");}catch(e){}save();render();cerrar("v-pedido");});
   try{var en=JSON.parse(localStorage.getItem(LS+"-enviado")||"null"); if(en&&cart.length){folio=en.folio;pago=en.pago;$("enviado").hidden=false;$("cap").hidden=pago!=="transferencia";}}catch(e){}
   render();
 })();
