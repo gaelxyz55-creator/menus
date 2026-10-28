@@ -1,169 +1,125 @@
 <!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Mordida · Alitas & Boneless</title>
-<meta name="description" content="Pide tus alitas y boneless de Mordida desde tu celular. Jueves a domingo, 5 pm a 11 pm.">
-<meta name="theme-color" content="#12343B">
-<link rel="icon" href="icono.png">
-<link rel="apple-touch-icon" href="icono.png">
-<!-- Vista previa al mandar el enlace por WhatsApp o Facebook (URL absoluta: cambiarla si cambia el enlace) -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mordida · Alitas & Boneless">
-<meta property="og:description" content="Pide desde aquí. Jueves a domingo, 5 pm a 11 pm. Tu pedido llega por WhatsApp.">
-<meta property="og:image" content="https://gaelxyz55-creator.github.io/menus/mordida/vista.jpg">
-<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta property="og:url" content="https://gaelxyz55-creator.github.io/menus/mordida/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mordida · Alitas & Boneless</title><meta name="description" content="Pide desde aquí. Jueves a domingo, 5 pm a 11 pm. Tu pedido llega por WhatsApp."><meta name="theme-color" content="#12343B">
+<meta property="og:type" content="website"><meta property="og:title" content="Mordida · Alitas & Boneless"><meta property="og:description" content="Pide desde aquí. Jueves a domingo, 5 pm a 11 pm. Tu pedido llega por WhatsApp.">
+<meta property="og:image" content="https://gaelxyz55-creator.github.io/menus/mordida/vista.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:url" content="https://gaelxyz55-creator.github.io/menus/mordida/">
+<link rel="icon" href="icono.png"><link rel="apple-touch-icon" href="icono.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<!-- Hecho con el MOTOR de menú digital v1 (estándar Gael García). Diseño propio de la marca. -->
 <style>
-/* Menú digital de Mordida (marca de muestra). Paleta de su marca: navy, naranja, amarillo, crema, rojo. */
-:root{--navy:#12343B;--navy2:#1B4750;--nar:#FF6B1A;--ama:#FFD23F;--crema:#F4F1EA;--rojo:#D7263D;--gris:#5E6E72;--linea:#E3DDD0}
+/* MOTOR · estilo de la barra, hojas y pedido. Colores y letras salen de las variables de cada marca:
+   --c-dark (oscuro) --c-acc (precio y botón) --c-hi (resalte) --c-bg (fondo) --c-alert --c-muted --c-line --display --body */
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;background:var(--crema);color:var(--navy);font-family:Nunito,system-ui,sans-serif;font-weight:700}
+html,body{margin:0;background:var(--c-bg);color:var(--c-dark);font-family:var(--body);font-weight:700}
 button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
-.wrap{max-width:520px;margin:0 auto;padding-bottom:110px}
-h1,h2,h3,.lil{font-family:"Lilita One",Nunito,sans-serif;font-weight:400;letter-spacing:.2px;margin:0}
-
-/* Cabecera */
-.top{background:var(--navy);color:var(--crema);padding:18px 16px 0;position:relative;overflow:hidden;border-radius:0 0 28px 28px}
-.top:before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:var(--navy2)}
-.logo{position:relative;z-index:1;background:var(--crema);border-radius:18px;padding:12px 14px;width:62%;transform:rotate(-3deg);box-shadow:0 6px 0 rgba(0,0,0,.18);margin-top:6px}
-.logo img{width:100%;display:block}
-.horario{position:relative;margin-top:18px;width:60%;z-index:1}
-.horario .d{font-family:"Lilita One";color:var(--ama);font-size:30px;line-height:1}
-.horario .h{font-size:15px;opacity:.9;margin-top:2px}
-.estado{display:inline-flex;align-items:center;gap:6px;margin:10px 0 18px;background:rgba(255,255,255,.1);padding:6px 10px;border-radius:99px;font-size:13px}
-.estado i{width:9px;height:9px;border-radius:50%;background:#7a8a8d}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0}
+.wrap{max-width:520px;margin:0 auto;padding-bottom:120px}
+.estado{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.14);padding:6px 10px;border-radius:99px;font-size:13px}
+.estado i{width:9px;height:9px;border-radius:50%;background:#9aa3a6}
 .estado.on i{background:#4ADE80;box-shadow:0 0 0 3px rgba(74,222,128,.25)}
-.zorro{position:absolute;right:-4px;bottom:0;width:36%;max-width:190px;pointer-events:none}
-.top{min-height:300px}
-.bocadillo{position:absolute;right:30%;top:118px;background:var(--ama);color:var(--navy);font-family:"Lilita One";font-size:15px;padding:7px 11px;border-radius:14px 14px 4px 14px;transform:rotate(4deg);box-shadow:0 3px 0 rgba(0,0,0,.2)}
-
-/* Secciones */
-.sec{padding:26px 16px 4px}
-.sec h2{font-size:30px;line-height:1}
-.sec .sub{color:var(--gris);font-size:14px;margin-top:4px}
-.foto{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:22px;display:block;margin:14px 0 6px;background:#e9e3d6}
-.item{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:14px 4px;border-bottom:2px dashed var(--linea)}
+.item{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:14px 4px;border-bottom:2px dashed var(--c-line)}
 .item:last-child{border-bottom:0}
-.item .t{flex:1}
-.item .n{font-size:18px;font-weight:900}
-.item .x{font-size:13px;color:var(--gris);font-weight:700}
-.item .p{font-family:"Lilita One";color:var(--nar);font-size:26px}
-.item .mas{width:38px;height:38px;border-radius:12px;background:var(--navy);color:var(--crema);font-size:24px;line-height:38px;text-align:center;flex:none}
-.item .q{display:none;background:var(--nar);color:#fff;font-size:12px;border-radius:99px;padding:2px 8px;margin-left:6px;vertical-align:2px}
+.item .t{flex:1}.item .n{font-size:18px;font-weight:800}.item .x{font-size:13px;color:var(--c-muted)}
+.item .p{font-family:var(--display);color:var(--c-acc);font-size:25px;white-space:nowrap}
+.item .mas{width:38px;height:38px;border-radius:12px;background:var(--c-dark);color:#fff;font-size:24px;line-height:38px;text-align:center;flex:none}
+.item .q{display:none;background:var(--c-acc);color:#fff;font-size:12px;border-radius:99px;padding:2px 8px;margin-left:6px;vertical-align:2px}
 .item.has .q{display:inline-block}
-
-/* Salsas */
-.salsas{margin:26px 16px 0;background:var(--navy);color:var(--crema);border-radius:26px;padding:20px 18px 16px;position:relative;overflow:hidden}
-.salsas h2{color:var(--ama);font-size:28px}
-.salsas .k{font-size:12px;letter-spacing:2px;opacity:.75;margin-top:2px}
-.sl{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:17px}
-.sl:last-of-type{border-bottom:0}
-.dots{display:flex;gap:5px}
-.dots b{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.18)}
-.dots b.o{background:var(--nar)}.dots b.r{background:var(--rojo)}
-.reto{display:flex;align-items:flex-end;gap:10px;margin-top:10px;background:var(--rojo);border-radius:18px;padding:12px 12px 0 14px}
-.reto p{margin:0 0 12px;font-size:15px;line-height:1.25}
-.reto b{font-family:"Lilita One";font-weight:400;font-size:20px;display:block;color:var(--ama)}
-.reto img{width:96px;flex:none;display:block}
-
-.pie{text-align:center;color:var(--gris);font-size:12.5px;padding:26px 16px 10px;line-height:1.5}
-.pie b{color:var(--navy)}
-
-/* Barra */
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:5;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--crema) 30%)}
-.bar .in{max-width:520px;margin:0 auto;background:var(--navy);color:var(--crema);border-radius:20px;display:flex;align-items:center;gap:10px;padding:10px 10px 10px 16px;box-shadow:0 8px 24px rgba(18,52,59,.35)}
-.bar .c{flex:1;font-size:13px;opacity:.85}
-.bar .c b{display:block;font-family:"Lilita One";font-weight:400;font-size:24px;color:var(--ama);opacity:1}
-.btn{background:var(--nar);color:#fff;border-radius:14px;padding:13px 16px;font-weight:900;font-size:16px}
-.btn:disabled{background:#4b6268;color:#a9b5b7}
-
-/* Hojas que suben */
-.velo{position:fixed;inset:0;background:rgba(18,52,59,.55);z-index:10;display:flex;align-items:flex-end;justify-content:center}
-.velo[hidden]{display:none}
-.hoja{background:var(--crema);width:100%;max-width:520px;max-height:92vh;overflow:auto;border-radius:26px 26px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom));animation:sube .22s ease-out}
+.ask{font-family:var(--body);font-weight:800;font-size:12.5px;color:var(--c-muted);background:rgba(0,0,0,.06);border-radius:99px;padding:4px 9px;white-space:nowrap}
+.dots{display:flex;gap:4px}.dots b{width:9px;height:9px;border-radius:50%;background:rgba(0,0,0,.12)}.dots b.o{background:#FF6B1A}.dots b.r{background:#D7263D}
+.pie{text-align:center;color:var(--c-muted);font-size:12.5px;padding:24px 16px 10px;line-height:1.5}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:5;padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
+.bar .in{max-width:520px;margin:0 auto;background:var(--c-dark);color:#fff;border-radius:20px;display:flex;align-items:center;gap:10px;padding:10px 10px 10px 16px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.bar .c{flex:1;font-size:13px}.bar .c b{display:block;font-family:var(--display);font-weight:400;font-size:24px;color:var(--c-hi)}
+.btn{background:var(--c-acc);color:#fff;border-radius:14px;padding:13px 16px;font-weight:800;font-size:16px;text-align:center}
+.btn:disabled{opacity:.45}
+.velo{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:10;display:flex;align-items:flex-end;justify-content:center}
+.velo[hidden],[hidden]{display:none!important}
+.hoja{background:var(--c-bg);width:100%;max-width:520px;max-height:92vh;overflow:auto;border-radius:26px 26px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom));animation:sube .22s ease-out}
 @keyframes sube{from{transform:translateY(40px);opacity:.4}}
-.hoja .cab{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
-.hoja h3{font-size:26px;line-height:1.05}
-.hoja .pr{font-family:"Lilita One";color:var(--nar);font-size:22px}
-.cerrar{width:36px;height:36px;border-radius:50%;background:#e6e0d3;font-size:20px;line-height:36px;text-align:center;flex:none}
-.lbl{font-size:13px;letter-spacing:1.5px;color:var(--gris);margin:16px 0 8px;text-transform:uppercase}
+.cab{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.hoja h3{font-size:26px;line-height:1.05}.hoja .pr{font-family:var(--display);color:var(--c-acc);font-size:22px}
+.cerrar{width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.08);font-size:20px;line-height:36px;text-align:center;flex:none}
+.lbl{font-size:13px;letter-spacing:1.4px;color:var(--c-muted);margin:16px 0 8px;text-transform:uppercase}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:2px solid var(--linea);background:#fff;border-radius:14px;padding:9px 11px;font-size:15px;display:flex;align-items:center;gap:8px}
-.chip .dots b{width:8px;height:8px;background:#ddd}.chip .dots b.o{background:var(--nar)}.chip .dots b.r{background:var(--rojo)}
-.chip[aria-pressed=true]{border-color:var(--navy);background:var(--navy);color:var(--crema)}
+.chip{border:2px solid var(--c-line);background:#fff;border-radius:14px;padding:9px 11px;font-size:15px;display:flex;align-items:center;gap:8px}
+.chip[aria-pressed=true]{border-color:var(--c-dark);background:var(--c-dark);color:#fff}
 .cant{display:flex;align-items:center;gap:14px}
-.cant button{width:42px;height:42px;border-radius:14px;background:var(--navy);color:var(--crema);font-size:24px}
-.cant span{font-family:"Lilita One";font-size:26px;min-width:28px;text-align:center}
+.cant button{width:42px;height:42px;border-radius:14px;background:var(--c-dark);color:#fff;font-size:24px}
+.cant span{font-family:var(--display);font-size:26px;min-width:28px;text-align:center}
 .agregar{width:100%;margin-top:18px}
-.aviso{color:var(--rojo);font-size:14px;min-height:20px;margin-top:8px}
-.ln{display:flex;gap:10px;align-items:center;padding:12px 0;border-bottom:2px dashed var(--linea)}
-.ln .t{flex:1}.ln .t small{display:block;color:var(--gris);font-size:13px}
-.ln .m{font-family:"Lilita One";color:var(--nar);font-size:19px}
-.ln .quita{color:var(--gris);font-size:13px;text-decoration:underline}
-.tot{display:flex;justify-content:space-between;font-family:"Lilita One";font-size:24px;margin-top:12px}
-.modo{display:flex;gap:8px}
-.modo .chip{flex:1;justify-content:center}
-input,textarea{width:100%;font:inherit;font-weight:700;color:var(--navy);border:2px solid var(--linea);border-radius:14px;padding:12px;background:#fff}
+.aviso{color:var(--c-alert);font-size:14px;min-height:20px;margin-top:8px}
+.ln{display:flex;gap:10px;align-items:center;padding:12px 0;border-bottom:2px dashed var(--c-line)}
+.ln .t{flex:1}.ln .t small{display:block;color:var(--c-muted);font-size:13px}
+.ln .m{font-family:var(--display);color:var(--c-acc);font-size:19px}
+.quita{color:var(--c-muted);font-size:13px;text-decoration:underline}
+.tot{display:flex;justify-content:space-between;font-family:var(--display);font-size:24px;margin-top:12px}
+.sub2{display:flex;justify-content:space-between;font-size:15px;color:var(--c-muted);margin-top:6px}
+.modo{display:flex;gap:8px}.modo .chip{flex:1;justify-content:center}
+input,textarea,select{width:100%;font:inherit;font-weight:700;color:var(--c-dark);border:2px solid var(--c-line);border-radius:14px;padding:12px;background:#fff}
 textarea{min-height:64px;resize:vertical}
-input:focus,textarea:focus{outline:none;border-color:var(--nar)}
+input:focus,textarea:focus{outline:none;border-color:var(--c-acc)}
+.caja{background:#fff;border:2px solid var(--c-line);border-radius:16px;padding:12px;margin-top:10px;font-size:14.5px;line-height:1.35}
+.cambio{font-family:var(--display);font-size:19px;margin-top:8px}
+.rapidos{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.rapidos button{border:2px solid var(--c-line);background:var(--c-bg);border-radius:10px;padding:6px 10px;font-size:14px}
+.tdatos{display:grid;gap:6px;margin:10px 0}
+.tdatos small{display:block;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--c-muted)}
+.tdatos b{font-size:17px}#t-num{font-family:var(--display);font-weight:400;font-size:22px;letter-spacing:1px}
+.tnota{font-size:12.5px;color:var(--c-muted)}
+.copiar{border:2px solid var(--c-dark);border-radius:12px;padding:8px 12px;font-size:14px}
+.tpasos{margin-top:10px;font-size:13.5px;color:var(--c-muted)}
+.cerrado{background:var(--c-hi);color:var(--c-dark);border-radius:14px;padding:10px 12px;font-size:14px;margin-top:10px}
+.ubic{margin-top:8px;border:2px dashed var(--c-acc);color:var(--c-acc);border-radius:12px;padding:9px 12px;font-size:14px;width:100%}
+.ubic.ok{border-style:solid}
 .enviar{width:100%;margin-top:16px;background:#1FA855;display:flex;justify-content:center;align-items:center;gap:8px}
 .enviar svg{width:22px;height:22px}
-.nota-ticket{font-size:12.5px;color:var(--gris);text-align:center;margin-top:8px}
-.pagos .chip{flex:1;justify-content:center}
-.caja{background:#fff;border:2px solid var(--linea);border-radius:16px;padding:12px;margin-top:10px;font-size:14.5px;line-height:1.35}
-.caja b{color:var(--navy)}
-.cambio{font-family:"Lilita One";font-size:20px;color:#1FA855;margin-top:8px}
-.rapidos{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.rapidos button{border:2px solid var(--linea);background:var(--crema);border-radius:10px;padding:6px 10px;font-size:14px}
-.cerrado{background:var(--ama);border-radius:14px;padding:10px 12px;font-size:14px;margin-top:10px}
-.cerrado[hidden],.sub2[hidden],.caja[hidden]{display:none}
-.sub2{display:flex;justify-content:space-between;font-size:15px;color:var(--gris);margin-top:6px}
-.ubic{margin-top:8px;border:2px dashed var(--nar);color:var(--nar);border-radius:12px;padding:9px 12px;font-size:14px;width:100%}
-.ubic.ok{border-style:solid;background:#FFF3EA}
-.enviado{text-align:center;margin-top:12px}
-.enviado[hidden]{display:none}
-.enviado button{text-decoration:underline;color:var(--gris);font-size:14px}
-select{width:100%;font:inherit;font-weight:700;color:var(--navy);border:2px solid var(--linea);border-radius:14px;padding:12px;background:#fff}
-</style>
-</head>
+.nota-ticket{font-size:12.5px;color:var(--c-muted);text-align:center;margin-top:8px}
+.enviado{margin-top:14px;text-align:center}
+.cap{background:#fff;border:2px solid #1FA855;border-radius:16px;padding:14px;display:grid;gap:10px;text-align:center}
+.capbtn{display:block;background:#1FA855;cursor:pointer}
+.capchat{font-size:13.5px;text-decoration:underline;color:var(--c-muted)}
+.capmsg{font-size:13.5px;color:var(--c-dark)}
+.nuevo{text-decoration:underline;color:var(--c-muted);font-size:14px;margin-top:12px}
+
+/* ---- Diseño de la marca ---- */
+:root{--c-dark:#12343B;--c-acc:#FF6B1A;--c-hi:#FFD23F;--c-bg:#F4F1EA;--c-alert:#D7263D;--c-muted:#5E6E72;--c-line:#E3DDD0;--display:"Lilita One",Nunito,sans-serif;--body:Nunito,system-ui,sans-serif}
+.top{background:var(--c-dark);color:var(--c-bg);padding:18px 16px 0;position:relative;overflow:hidden;border-radius:0 0 28px 28px;min-height:300px}
+.top:before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:#1B4750}
+.logo{position:relative;z-index:1;background:var(--c-bg);border-radius:18px;padding:12px 14px;width:62%;transform:rotate(-3deg);box-shadow:0 6px 0 rgba(0,0,0,.18);margin-top:6px}
+.logo img{width:100%;display:block}
+.horario{position:relative;z-index:1;margin-top:18px;width:60%}
+.horario .d{font-family:var(--display);color:var(--c-hi);font-size:30px;line-height:1}
+.horario .h{font-size:15px;opacity:.9;margin:2px 0 10px}
+.zorro{position:absolute;right:-4px;bottom:0;width:36%;max-width:190px;pointer-events:none}
+.sec{padding:26px 16px 4px}.sec h2{font-size:30px;line-height:1}.sec .sub{color:var(--c-muted);font-size:14px;margin-top:4px}
+.foto{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:22px;display:block;margin:14px 0 6px;background:#e9e3d6}
+.salsas{margin:26px 16px 0;background:var(--c-dark);color:var(--c-bg);border-radius:26px;padding:20px 18px 16px}
+.salsas h2{color:var(--c-hi);font-size:28px}.salsas .k{font-size:12px;letter-spacing:2px;opacity:.75;margin-top:2px}
+.sl{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:17px}
+.sl .dots b{width:12px;height:12px;background:rgba(255,255,255,.18)}
+.reto{display:flex;align-items:flex-end;gap:10px;margin-top:12px;background:var(--c-alert);border-radius:18px;padding:12px 12px 0 14px}
+.reto p{margin:0 0 12px;font-size:15px;line-height:1.25}.reto b{font-family:var(--display);font-weight:400;font-size:20px;display:block;color:var(--c-hi)}
+.reto img{width:96px;flex:none;display:block}
+</style></head>
 <body>
 <div class="wrap">
   <header class="top">
     <div class="logo"><img src="logo.webp" alt="Mordida · Alitas & Boneless"></div>
-    <div class="horario">
-      <div class="d">JUE A DOM</div>
-      <div class="h">5 pm a 11 pm</div>
-      <div class="estado" id="estado"><i></i><span>Revisando horario…</span></div>
-    </div>
-        <img class="zorro" src="zorro-cel.webp" alt="">
+    <div class="horario"><div class="d">JUE A DOM</div><div class="h">5 pm a 11 pm</div><div class="estado" id="estado"><i></i><span>Revisando horario…</span></div></div>
+    <img class="zorro" src="zorro-cel.webp" alt="">
   </header>
-
   <main id="menu"></main>
-
-  <section class="salsas" aria-label="Salsas">
-    <h2>Escoge tu salsa</h2>
-    <div class="k">QUÉ TANTO PICA</div>
-    <div id="lista-salsas"></div>
-    <div class="reto">
-      <p><b>¿Le entras al Diablo?</b>La más picosa de la casa. Bajo tu propio riesgo.</p>
-      <img src="zorro-diablo.webp" alt="">
-    </div>
-  </section>
-
+  <section class="salsas" aria-label="Salsas"><h2>Escoge tu salsa</h2><div class="k">QUÉ TANTO PICA</div><div id="lista-salsas"></div>
+    <div class="reto"><p><b>¿Le entras al Diablo?</b>La más picosa de la casa. Bajo tu propio riesgo.</p><img src="zorro-diablo.webp" alt=""></div></section>
   <p class="pie">Pides aquí y tu pedido llega por WhatsApp.<br><b>Mordida</b> es una marca de muestra · menú digital hecho por <b>Gael García · Contenido para negocios</b></p>
 </div>
-
 <div class="bar"><div class="in">
   <div class="c"><span id="cnt">Tu pedido está vacío</span><b id="tot">$0</b></div>
   <button class="btn" id="ver" disabled>Ver mi pedido</button>
 </div></div>
 
-<!-- Hoja: armar un producto -->
 <div class="velo" id="v-item" hidden><div class="hoja" role="dialog" aria-modal="true">
   <div class="cab"><div><h3 id="i-n"></h3><div class="pr" id="i-p"></div></div><button class="cerrar" data-cierra>×</button></div>
   <div id="i-opc"></div>
@@ -173,13 +129,13 @@ select{width:100%;font:inherit;font-weight:700;color:var(--navy);border:2px soli
   <button class="btn agregar" id="agregar">Agregar</button>
 </div></div>
 
-<!-- Hoja: el pedido -->
 <div class="velo" id="v-pedido" hidden><div class="hoja" role="dialog" aria-modal="true">
   <div class="cab"><h3>Tu pedido</h3><button class="cerrar" data-cierra>×</button></div>
   <div class="cerrado" id="aviso-cerrado" hidden></div>
   <div id="lineas"></div>
   <div class="sub2" id="fila-envio" hidden><span>Envío a domicilio</span><span id="costo-envio"></span></div>
   <div class="tot"><span>Total</span><span id="tot2">$0</span></div>
+  <div class="nota-ticket" id="nota-precio" hidden>Lo que dice «al pedir» se suma cuando te contesten.</div>
 
   <div class="lbl">¿Cómo lo quieres?</div>
   <div class="modo"><button class="chip" id="m-rec" aria-pressed="true">Paso por él</button><button class="chip" id="m-dom" aria-pressed="false">A domicilio</button></div>
@@ -201,155 +157,169 @@ select{width:100%;font:inherit;font-weight:700;color:var(--navy);border:2px soli
     <div class="rapidos" id="rapidos"></div>
     <div class="cambio" id="cambio"></div>
   </div>
-  <div class="caja" id="caja-tra" hidden><b>Transferencia:</b> al recibir tu pedido te mandamos los datos por WhatsApp. Cuando transfieras, <b>manda la captura por ese mismo chat</b>. Tu pedido se prepara al ver el pago.</div>
+  <div class="caja" id="caja-tra" hidden>
+    <b>Transfiere a esta cuenta:</b>
+    <div class="tdatos" id="t-datos"></div>
+    <button class="copiar" id="t-copiar">Copiar número</button>
+    <div class="tpasos">1. Manda tu pedido. &nbsp;2. Transfiere. &nbsp;3. Manda tu captura (aquí abajo o por WhatsApp). Tu pedido se prepara al ver el pago.</div>
+  </div>
   <div class="caja" id="caja-tar" hidden><b>Tarjeta:</b> se cobra con terminal al entregar o al pasar por él.</div>
 
   <div class="lbl">Nota (opcional)</div>
-  <input id="nota" placeholder="Ej. salsa aparte, sin apio">
+  <input id="nota" placeholder="Ej. sin cebolla, salsa aparte">
   <div class="aviso" id="p-err"></div>
   <button class="btn enviar" id="enviar"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>Enviar pedido por WhatsApp</button>
   <div class="nota-ticket">Se abre WhatsApp con tu pedido escrito. Sólo toca enviar.</div>
-  <div class="enviado" id="enviado" hidden><button id="nuevo">¿Ya lo enviaste? Empezar un pedido nuevo</button></div>
+  <div class="enviado" id="enviado" hidden>
+    <div class="cap" id="cap" hidden>
+      <b>¿Ya transferiste? Manda tu captura</b>
+      <label class="btn capbtn">📎 Escoger mi captura<input type="file" id="cap-archivo" accept="image/*" hidden></label>
+      <button class="capchat" id="cap-chat">O ábrela en el chat de WhatsApp y mándala ahí</button>
+      <div class="capmsg" id="cap-msg"></div>
+    </div>
+    <button class="nuevo" id="nuevo">¿Ya lo enviaste? Empezar un pedido nuevo</button>
+  </div>
 </div></div>
 
 <script>
+/* ---- Datos del negocio ---- */
+var SALSAS=[{n:"BBQ",picor:0},{n:"Lemon pepper",picor:1},{n:"Mango habanero",picor:3},{n:"Búfalo",picor:2},{n:"Tamarindo chipotle",picor:2},{n:"Diablo",picor:4}];
+var CONFIG={negocio:"Mordida",clave:"MOR",whats:"528123963061",
+  dias:["Thu","Fri","Sat","Sun"],abre:17,cierra:23,horarioTxt:"jueves a domingo de 5 pm a 11 pm",
+  domicilio:true,envio:30,minimoDomicilio:150,
+  pagos:{efectivo:true,transferencia:true,tarjeta:false},
+  transferencia:{banco:"Banco de muestra",titular:"Mordida Alitas (muestra)",tipo:"Número de tarjeta",cuenta:"0000 1111 2222 3333",nota:"Datos de muestra: en un negocio real van los suyos."}};
+var MENU=[
+ {sec:"Alitas",sub:"Bañadas en la salsa que escojas",foto:"alitas.webp",items:[
+  {id:"a10",n:"Alitas 10 piezas",x:"Con apio y aderezo",p:150,opts:[{lbl:"Tu salsa",corto:"Salsa",choices:SALSAS,max:1,req:true}]},
+  {id:"a20",n:"Alitas 20 piezas",x:"Puedes pedir 2 salsas",p:280,opts:[{lbl:"Tus salsas",corto:"Salsas",choices:SALSAS,max:2,req:true}]},
+  {id:"c10",n:"Combo 10 + papas",x:"10 alitas y tus papas",p:185,opts:[{lbl:"Tu salsa",corto:"Salsa",choices:SALSAS,max:1,req:true},{lbl:"Tus papas",corto:"Papas",choices:["Francesas","Gajo"],max:1,req:true,def:"Francesas"}]}]},
+ {sec:"Boneless y papas",sub:"Pechuga empanizada, crujiente",foto:"boneless.webp",items:[
+  {id:"b250",n:"Boneless 250 g",x:"Con aderezo ranch",p:130,opts:[{lbl:"Tu salsa",corto:"Salsa",choices:SALSAS,max:1,req:true}]},
+  {id:"b500",n:"Boneless 500 g",x:"Puedes pedir 2 salsas",p:240,opts:[{lbl:"Tus salsas",corto:"Salsas",choices:SALSAS,max:2,req:true}]},
+  {id:"pf",n:"Papas francesas",p:45},{id:"pg",n:"Papas gajo",p:55}]}];
+document.addEventListener("DOMContentLoaded",function(){var e=document.getElementById("lista-salsas");if(e)e.innerHTML=SALSAS.map(function(s){var h='<span class="dots">';for(var k=1;k<=4;k++)h+='<b class="'+(k<=s.picor?(k>=3?'r':'o'):'')+'"></b>';return '<div class="sl"><span>'+s.n+'</span>'+h+'</span></div>';}).join("");});
+</script>
+<script>
+/* ===== MOTOR DEL MENÚ DIGITAL · estándar Gael García (v1, 28-oct-2026) =====
+   No se toca por cliente. Lo de cada negocio va en CONFIG y MENU (arriba de este bloque). */
 (function(){
-  /* ====== DATOS DEL NEGOCIO (lo único que cambia de un cliente a otro; ver ESTANDAR MENU DIGITAL.md) ====== */
-  var CONFIG = {
-    negocio: "Mordida",
-    clave: "MOR",                    // prefijo del folio
-    whats: "528123963061",           // 52 + 10 dígitos. Muestra: llega a Gael
-    dias: ["Thu","Fri","Sat","Sun"], abre: 17, cierra: 23, horarioTxt: "jueves a domingo de 5 pm a 11 pm",
-    domicilio: true, envio: 30, minimoDomicilio: 150,   // muestra: envío y mínimo de ejemplo
-    pagos: {efectivo: true, transferencia: true, tarjeta: false}
-  };
-  var WHATS = CONFIG.whats;
-  var SALSAS = [
-    {n:"BBQ", p:0},{n:"Lemon pepper", p:1},{n:"Mango habanero", p:3},
-    {n:"Búfalo", p:2},{n:"Tamarindo chipotle", p:2},{n:"Diablo", p:4}
-  ];
-  var MENU = [
-    {sec:"Alitas", sub:"Bañadas en la salsa que escojas", foto:"alitas.webp", items:[
-      {id:"a10", n:"Alitas 10 piezas", x:"Con apio y aderezo", p:150, salsas:1},
-      {id:"a20", n:"Alitas 20 piezas", x:"Puedes pedir 2 salsas", p:280, salsas:2},
-      {id:"c10", n:"Combo 10 + papas", x:"10 alitas y tus papas", p:185, salsas:1, papas:true}]},
-    {sec:"Boneless y papas", sub:"Pechuga empanizada, crujiente", foto:"boneless.webp", items:[
-      {id:"b250", n:"Boneless 250 g", x:"Con aderezo ranch", p:130, salsas:1},
-      {id:"b500", n:"Boneless 500 g", x:"Puedes pedir 2 salsas", p:240, salsas:2},
-      {id:"pf", n:"Papas francesas", x:"", p:45},
-      {id:"pg", n:"Papas gajo", x:"", p:55}]}
-  ];
+  var C=CONFIG, WHATS=C.whats, LS="menu-"+C.clave;
   var byId={}; MENU.forEach(function(s){s.items.forEach(function(i){byId[i.id]=i;});});
   function $(id){return document.getElementById(id);}
   function money(n){return "$"+n.toLocaleString("es-MX");}
   function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
-  function dots(p){var h='<span class="dots">';for(var k=1;k<=4;k++)h+='<b class="'+(k<=p?(k>=3?'r':'o'):'')+'"></b>';return h+'</span>';}
+  function dots(p){if(p==null)return "";var h='<span class="dots">';for(var k=1;k<=4;k++)h+='<b class="'+(k<=p?(k>=3?'r':'o'):'')+'"></b>';return h+'</span>';}
+  function precio(i){return i.p==null?'<span class="ask">precio al pedir</span>':money(i.p);}
 
-  // Pintar menú
+  // ---- Pintar el menú
   var html="";
   MENU.forEach(function(s){
-    html+='<section class="sec"><h2>'+s.sec+'</h2><div class="sub">'+s.sub+'</div><img class="foto" src="'+s.foto+'" alt="'+s.sec+' de Mordida" loading="lazy">';
+    html+='<section class="sec"><h2>'+s.sec+'</h2>'+(s.sub?'<div class="sub">'+s.sub+'</div>':'')+(s.foto?'<img class="foto" src="'+s.foto+'" alt="'+esc(s.sec)+'" loading="lazy">':'');
     s.items.forEach(function(i){
-      html+='<button class="item" data-id="'+i.id+'"><div class="t"><div class="n">'+i.n+'<span class="q" id="q-'+i.id+'"></span></div>'+(i.x?'<div class="x">'+i.x+'</div>':'')+'</div><div class="p">'+money(i.p)+'</div><div class="mas" aria-hidden="true">+</div></button>';
+      html+='<button class="item" data-id="'+i.id+'"><div class="t"><div class="n">'+esc(i.n)+'<span class="q" id="q-'+i.id+'"></span></div>'+(i.x?'<div class="x">'+esc(i.x)+'</div>':'')+'</div><div class="p">'+precio(i)+'</div><div class="mas" aria-hidden="true">+</div></button>';
     });
     html+='</section>';
   });
   $("menu").innerHTML=html;
-  $("lista-salsas").innerHTML=SALSAS.map(function(s){return '<div class="sl"><span>'+s.n+'</span>'+dots(s.p)+'</div>';}).join("");
 
-  // Abierto o cerrado (hora de Monterrey)
+  // ---- Abierto o cerrado (hora de Monterrey)
   var abierto=null;
   try{
     var f=new Intl.DateTimeFormat("en-US",{timeZone:"America/Monterrey",weekday:"short",hour:"numeric",hour12:false}).formatToParts(new Date());
     var wd=f.find(function(x){return x.type==="weekday";}).value, hr=+f.find(function(x){return x.type==="hour";}).value%24;
-    abierto=CONFIG.dias.indexOf(wd)>=0 && hr>=CONFIG.abre && hr<CONFIG.cierra;
+    abierto=C.dias.indexOf(wd)>=0 && hr>=C.abre && hr<C.cierra;
     $("estado").className="estado"+(abierto?" on":"");
     $("estado").querySelector("span").textContent=abierto?"Abierto ahora":"Cerrado · pide y te contestan al abrir";
-  }catch(e){$("estado").style.display="none";}
+  }catch(e){ if($("estado")) $("estado").style.display="none"; }
 
-  // Carrito
-  var cart=[]; try{var sv=JSON.parse(localStorage.getItem("mordida-pedido")||"[]"); if(Array.isArray(sv)) cart=sv.filter(function(l){return byId[l.id]&&l.q>0&&l.q<100;});}catch(e){}
-  function save(){try{localStorage.setItem("mordida-pedido",JSON.stringify(cart));}catch(e){}}
+  // ---- Carrito
+  var cart=[]; try{var sv=JSON.parse(localStorage.getItem(LS)||"[]"); if(Array.isArray(sv)) cart=sv.filter(function(l){return byId[l.id]&&l.q>0&&l.q<100;});}catch(e){}
+  function save(){try{localStorage.setItem(LS,JSON.stringify(cart));}catch(e){}}
   function count(){return cart.reduce(function(a,l){return a+l.q;},0);}
-  function total(){return cart.reduce(function(a,l){return a+byId[l.id].p*l.q;},0);}
+  function total(){return cart.reduce(function(a,l){var p=byId[l.id].p;return a+(p==null?0:p*l.q);},0);}
+  function sinPrecio(){return cart.some(function(l){return byId[l.id].p==null;});}
 
-  // Hoja de producto
-  var cur=null, sel=[], papa="Francesas", q=1;
+  // ---- Hojas
   function abrir(v){$(v).hidden=false;document.body.style.overflow="hidden";}
   function cerrar(v){$(v).hidden=true;document.body.style.overflow="";}
   document.querySelectorAll("[data-cierra]").forEach(function(b){b.addEventListener("click",function(){cerrar(b.closest(".velo").id);});});
   document.querySelectorAll(".velo").forEach(function(v){v.addEventListener("click",function(e){if(e.target===v)cerrar(v.id);});});
 
+  // ---- Armar un producto (opciones genéricas: salsas, guisos, tortilla, papas…)
+  var cur=null, sel=[], q=1;
   function pintaOpc(){
     var h="";
-    if(cur.salsas){
-      h+='<div class="lbl">'+(cur.salsas>1?'Tus salsas (hasta 2)':'Tu salsa')+'</div><div class="chips">';
-      SALSAS.forEach(function(s){h+='<button class="chip" data-s="'+esc(s.n)+'" aria-pressed="'+(sel.indexOf(s.n)>=0)+'">'+esc(s.n)+dots(s.p)+'</button>';});
+    (cur.opts||[]).forEach(function(o,oi){
+      h+='<div class="lbl">'+esc(o.lbl)+(o.max>1?' (hasta '+o.max+')':'')+'</div><div class="chips">';
+      o.choices.forEach(function(c){var n=c.n||c; h+='<button class="chip" data-o="'+oi+'" data-v="'+esc(n)+'" aria-pressed="'+(sel[oi].indexOf(n)>=0)+'">'+esc(n)+dots(c.picor)+'</button>';});
       h+='</div>';
-    }
-    if(cur.papas){
-      h+='<div class="lbl">Tus papas</div><div class="chips">';
-      ["Francesas","Gajo"].forEach(function(p){h+='<button class="chip" data-p="'+p+'" aria-pressed="'+(papa===p)+'">'+p+'</button>';});
-      h+='</div>';
-    }
-    $("i-opc").innerHTML=h;
-    $("i-q").textContent=q;
-    $("agregar").textContent="Agregar · "+money(cur.p*q);
+    });
+    $("i-opc").innerHTML=h; $("i-q").textContent=q;
+    $("agregar").textContent=cur.p==null?"Agregar":"Agregar · "+money(cur.p*q);
   }
   $("i-opc").addEventListener("click",function(e){
     var b=e.target.closest(".chip"); if(!b)return; $("i-err").textContent="";
-    if(b.dataset.s){var s=b.dataset.s,k=sel.indexOf(s);
-      if(k>=0) sel.splice(k,1);
-      else if(cur.salsas===1) sel=[s];
-      else if(sel.length<cur.salsas) sel.push(s);
-      else {sel.shift(); sel.push(s);} }
-    if(b.dataset.p) papa=b.dataset.p;
+    var o=cur.opts[+b.dataset.o], s=sel[+b.dataset.o], v=b.dataset.v, k=s.indexOf(v);
+    if(k>=0) s.splice(k,1); else if(o.max===1){s.length=0;s.push(v);} else if(s.length<o.max) s.push(v); else {s.shift();s.push(v);}
     pintaOpc();
   });
   $("menu").addEventListener("click",function(e){
     var b=e.target.closest(".item"); if(!b)return;
-    cur=byId[b.dataset.id]; sel=[]; papa="Francesas"; q=1;
-    $("i-n").textContent=cur.n; $("i-p").textContent=money(cur.p); $("i-err").textContent="";
+    cur=byId[b.dataset.id]; q=1; sel=(cur.opts||[]).map(function(o){return o.def?[o.def]:[];});
+    $("i-n").textContent=cur.n; $("i-p").innerHTML=precio(cur); $("i-err").textContent="";
     pintaOpc(); abrir("v-item");
   });
   $("menos").addEventListener("click",function(){if(q>1){q--;pintaOpc();}});
   $("mas").addEventListener("click",function(){if(q<20){q++;pintaOpc();}});
   $("agregar").addEventListener("click",function(){
-    if(cur.salsas && !sel.length){$("i-err").textContent="Escoge tu salsa.";return;}
-    var det=[]; if(sel.length) det.push("Salsa: "+sel.join(" y ")); if(cur.papas) det.push("Papas "+papa.toLowerCase());
-    det=det.join(" · ");
+    var falta=(cur.opts||[]).findIndex(function(o,oi){return o.req&&!sel[oi].length;});
+    if(falta>=0){$("i-err").textContent="Escoge: "+cur.opts[falta].lbl.toLowerCase()+".";return;}
+    var det=(cur.opts||[]).map(function(o,oi){return sel[oi].length?(o.corto||o.lbl)+": "+sel[oi].join(", "):"";}).filter(Boolean).join(" · ");
     var ex=cart.find(function(l){return l.id===cur.id&&l.det===det;});
     if(ex) ex.q+=q; else cart.push({id:cur.id,det:det,q:q});
     save(); render(); cerrar("v-item");
   });
 
-  // Pedido
-  var modo="recoger", pago=null, ubic="";
-  if(!CONFIG.domicilio) $("m-dom").style.display="none";
-  var NOMBRES={efectivo:"Efectivo",transferencia:"Transferencia",tarjeta:"Tarjeta"};
-  $("pagos").innerHTML=Object.keys(NOMBRES).filter(function(k){return CONFIG.pagos[k];}).map(function(k){return '<button class="chip" data-pago="'+k+'" aria-pressed="false">'+NOMBRES[k]+'</button>';}).join("");
+  // ---- Pedido: entrega y pago
+  var modo="recoger", pago=null, ubic="", folio="";
+  if(!C.domicilio) $("m-dom").style.display="none";
+  var T=C.transferencia, NOM={efectivo:"Efectivo",transferencia:"Transferencia",tarjeta:"Tarjeta"};
+  var hay={efectivo:!!C.pagos.efectivo, transferencia:!!(C.pagos.transferencia&&T&&T.cuenta), tarjeta:!!C.pagos.tarjeta};
+  $("pagos").innerHTML=Object.keys(NOM).filter(function(k){return hay[k];}).map(function(k){return '<button class="chip" data-pago="'+k+'" aria-pressed="false">'+NOM[k]+'</button>';}).join("");
+  if(hay.transferencia){
+    $("t-datos").innerHTML='<div><small>Banco</small><b>'+esc(T.banco)+'</b></div><div><small>A nombre de</small><b>'+esc(T.titular)+'</b></div><div><small>'+esc(T.tipo||"Número")+'</small><b id="t-num">'+esc(T.cuenta)+'</b></div>'+(T.nota?'<div class="tnota">'+esc(T.nota)+'</div>':'');
+    $("t-copiar").addEventListener("click",function(){
+      var n=T.cuenta.replace(/\s/g,""), b=$("t-copiar");
+      function ok(){b.textContent="¡Copiado!";setTimeout(function(){b.textContent="Copiar número";},1800);}
+      if(navigator.clipboard) navigator.clipboard.writeText(n).then(ok,function(){b.textContent=n;}); else b.textContent=n;
+    });
+  }
   $("pagos").addEventListener("click",function(e){var b=e.target.closest("[data-pago]");if(!b)return;pago=b.dataset.pago;$("p-err").textContent="";pinta();});
-  function envio(){return (modo==="domicilio"&&CONFIG.domicilio)?CONFIG.envio:0;}
+  function envio(){return (modo==="domicilio"&&C.domicilio&&C.envio)?C.envio:0;}
   function totalFinal(){return total()+envio();}
-  function setModo(m){modo=m;$("p-err").textContent="";pinta();}
-  $("m-rec").addEventListener("click",function(){setModo("recoger");});
-  $("m-dom").addEventListener("click",function(){setModo("domicilio");});
+  $("m-rec").addEventListener("click",function(){modo="recoger";$("p-err").textContent="";pinta();});
+  $("m-dom").addEventListener("click",function(){modo="domicilio";$("p-err").textContent="";pinta();});
   function pagaCon(){return parseInt(($("paga").value||"").replace(/[^\d]/g,""),10)||0;}
   function pinta(){
     $("m-rec").setAttribute("aria-pressed",modo==="recoger");$("m-dom").setAttribute("aria-pressed",modo==="domicilio");
     $("caja-dir").hidden=modo!=="domicilio"; $("caja-rec").hidden=modo!=="recoger";
-    $("fila-envio").hidden=!envio(); $("costo-envio").textContent=money(envio());
-    $("tot2").textContent=money(totalFinal());
+    var dom=modo==="domicilio"&&C.domicilio;
+    $("fila-envio").hidden=!dom; $("costo-envio").textContent=C.envio?money(C.envio):"por confirmar";
+    $("tot2").textContent=money(totalFinal())+(sinPrecio()||(dom&&!C.envio)?" + lo que falta":"");
+    $("nota-precio").hidden=!sinPrecio();
     document.querySelectorAll("[data-pago]").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.pago===pago);});
     $("caja-efe").hidden=pago!=="efectivo"; $("caja-tra").hidden=pago!=="transferencia"; $("caja-tar").hidden=pago!=="tarjeta";
     if(pago==="efectivo"){
-      var T=totalFinal(), sug=[T]; [100,200,500,1000].forEach(function(b){var v=Math.ceil(T/b)*b; if(v>T&&sug.indexOf(v)<0&&sug.length<4) sug.push(v);});
-      $("rapidos").innerHTML=sug.map(function(v,i){return '<button data-v="'+v+'">'+(i===0?"Exacto ":"")+money(v)+'</button>';}).join("");
-      var p=pagaCon(); $("cambio").textContent=!p?"":(p<T?"Falta: "+money(T-p):(p===T?"Pagas exacto":"Tu cambio: "+money(p-T)));
-      $("cambio").style.color=p&&p<T?"var(--rojo)":"#1FA855";
+      var Tt=totalFinal(), exacto=!sinPrecio()&&!(dom&&!C.envio);
+      var sug=exacto?[Tt]:[]; [100,200,500,1000].forEach(function(b){var v=Math.ceil((Tt||1)/b)*b; if(v>Tt&&sug.indexOf(v)<0&&sug.length<4) sug.push(v);});
+      $("rapidos").innerHTML=sug.map(function(v,i){return '<button data-v="'+v+'">'+(exacto&&i===0?"Exacto ":"")+money(v)+'</button>';}).join("");
+      var p=pagaCon(), cb=$("cambio");
+      if(!p) cb.textContent=""; else if(!exacto) {cb.textContent="Pagas con "+money(p)+": te llevan tu cambio. El total exacto te lo confirman.";cb.style.color="var(--c-muted)";}
+      else {cb.textContent=p<Tt?"Falta: "+money(Tt-p):(p===Tt?"Pagas exacto":"Tu cambio: "+money(p-Tt)); cb.style.color=p<Tt?"var(--c-alert)":"#1FA855";}
     }
     var av=$("aviso-cerrado");
-    if(abierto===false){av.hidden=false;av.textContent="Ahorita está cerrado ("+CONFIG.horarioTxt+"). Puedes mandar tu pedido y te contestan al abrir.";} else av.hidden=true;
+    if(abierto===false){av.hidden=false;av.textContent="Ahorita está cerrado ("+C.horarioTxt+"). Puedes mandar tu pedido y te contestan al abrir.";} else av.hidden=true;
   }
   $("rapidos").addEventListener("click",function(e){var b=e.target.closest("[data-v]");if(!b)return;$("paga").value=b.dataset.v;$("p-err").textContent="";pinta();});
   $("paga").addEventListener("input",function(){$("p-err").textContent="";pinta();});
@@ -365,56 +335,67 @@ select{width:100%;font:inherit;font-weight:700;color:var(--navy);border:2px soli
   function render(){
     var n=count();
     $("cnt").textContent=n?(n+(n===1?" producto":" productos")):"Tu pedido está vacío";
-    $("tot").textContent=money(total());
+    $("tot").textContent=money(total())+(sinPrecio()?" +":"");
     $("ver").disabled=!n;
     MENU.forEach(function(s){s.items.forEach(function(i){
       var k=cart.filter(function(l){return l.id===i.id;}).reduce(function(a,l){return a+l.q;},0);
       $("q-"+i.id).textContent=k?("× "+k):""; document.querySelector('[data-id="'+i.id+'"]').classList.toggle("has",!!k);
     });});
     $("lineas").innerHTML=cart.map(function(l,ix){var i=byId[l.id];
-      return '<div class="ln"><div class="t">'+l.q+' × '+esc(i.n)+(l.det?'<small>'+esc(l.det)+'</small>':'')+'<button class="quita" data-ix="'+ix+'">Quitar</button></div><div class="m">'+money(i.p*l.q)+'</div></div>';}).join("");
+      return '<div class="ln"><div class="t">'+l.q+' × '+esc(i.n)+(l.det?'<small>'+esc(l.det)+'</small>':'')+'<button class="quita" data-ix="'+ix+'">Quitar</button></div><div class="m">'+(i.p==null?'<span class="ask">al pedir</span>':money(i.p*l.q))+'</div></div>';}).join("");
     pinta();
   }
   $("lineas").addEventListener("click",function(e){var b=e.target.closest(".quita");if(!b)return;cart.splice(+b.dataset.ix,1);save();render();if(!cart.length)cerrar("v-pedido");});
   $("ver").addEventListener("click",function(){$("p-err").textContent="";render();abrir("v-pedido");});
-  var folio="";
-  function nuevoFolio(){var d=new Date();return CONFIG.clave+"-"+String(d.getDate()).padStart(2,"0")+String(d.getMonth()+1).padStart(2,"0")+"-"+Math.floor(1000+Math.random()*9000);}
+  function nuevoFolio(){var d=new Date();return C.clave+"-"+String(d.getDate()).padStart(2,"0")+String(d.getMonth()+1).padStart(2,"0")+"-"+Math.floor(1000+Math.random()*9000);}
   function ticket(){
-    var t="🧾 *Pedido "+folio+" · "+CONFIG.negocio+"*\n\n";
-    cart.forEach(function(l){var i=byId[l.id];t+=l.q+" × "+i.n+" — "+money(i.p*l.q)+(l.det?"\n   "+l.det:"")+"\n";});
-    if(envio()) t+="Envío a domicilio — "+money(envio())+"\n";
-    t+="\n*Total: "+money(totalFinal())+"*\n";
+    var t="🧾 *Pedido "+folio+" · "+C.negocio+"*\n\n";
+    cart.forEach(function(l){var i=byId[l.id];t+=l.q+" × "+i.n+" — "+(i.p==null?"precio por confirmar":money(i.p*l.q))+(l.det?"\n   "+l.det:"")+"\n";});
+    if(modo==="domicilio") t+="Envío a domicilio — "+(C.envio?money(C.envio):"por confirmar")+"\n";
+    t+="\n*Total: "+money(totalFinal())+(sinPrecio()||(modo==="domicilio"&&!C.envio)?" + lo que falta de precio":"")+"*\n";
     t+="\n👤 "+$("nombre").value.trim();
     if(modo==="domicilio"){t+="\n🛵 A domicilio: "+$("dir").value.trim(); var r=$("ref").value.trim(); if(r) t+="\n   Referencia: "+r; if(ubic) t+="\n   Ubicación: "+ubic;}
     else t+="\n🏃 Paso por él: "+$("hora").value.toLowerCase();
-    if(pago==="efectivo"){var p=pagaCon(),T=totalFinal(); t+="\n💵 Efectivo: "+(p===T?"paga exacto":"paga con "+money(p)+" → cambio "+money(p-T));}
-    if(pago==="transferencia") t+="\n🏦 Transferencia: mándame los datos y te paso la captura";
+    if(pago==="efectivo"){var p=pagaCon(),Tt=totalFinal(); t+="\n💵 Efectivo: "+(sinPrecio()?"paga con "+money(p):(p===Tt?"paga exacto":"paga con "+money(p)+" → cambio "+money(p-Tt)));}
+    if(pago==="transferencia") t+="\n🏦 Transferencia a "+T.banco+": te mando la captura";
     if(pago==="tarjeta") t+="\n💳 Tarjeta: con terminal";
     var nota=$("nota").value.trim(); if(nota) t+="\n📝 "+nota;
     return t;
   }
   function problema(){
     if(!cart.length) return ["Tu pedido está vacío.",null];
-    if(modo==="domicilio"&&CONFIG.minimoDomicilio&&total()<CONFIG.minimoDomicilio) return ["A domicilio, el pedido mínimo es de "+money(CONFIG.minimoDomicilio)+" (sin contar el envío).",null];
+    if(modo==="domicilio"&&C.minimoDomicilio&&total()<C.minimoDomicilio) return ["A domicilio, el pedido mínimo es de "+money(C.minimoDomicilio)+" (sin contar el envío).",null];
     if(modo==="domicilio"&&$("dir").value.trim().length<8) return ["Escribe la dirección completa para la entrega.","dir"];
     if(!$("nombre").value.trim()) return ["Escribe tu nombre para saber de quién es el pedido.","nombre"];
     if(!pago) return ["Escoge cómo vas a pagar.",null];
-    if(pago==="efectivo"){var p=pagaCon(); if(!p) return ["Escribe con cuánto pagas para llevarte tu cambio.","paga"]; if(p<totalFinal()) return ["Con "+money(p)+" no alcanza: el total es "+money(totalFinal())+".","paga"];}
+    if(pago==="efectivo"){var p=pagaCon(); if(!p) return ["Escribe con cuánto pagas para llevarte tu cambio.","paga"]; if(!sinPrecio()&&!(modo==="domicilio"&&!C.envio)&&p<totalFinal()) return ["Con "+money(p)+" no alcanza: el total es "+money(totalFinal())+".","paga"];}
     return null;
+  }
+  var movil=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  function abreWhats(txt){
+    if(movil) location.href="https://wa.me/"+WHATS+"?text="+encodeURIComponent(txt);
+    else window.open("https://web.whatsapp.com/send?phone="+WHATS+"&text="+encodeURIComponent(txt),"_blank");
   }
   $("enviar").addEventListener("click",function(){
     var pr=problema(); if(pr){$("p-err").textContent=pr[0]; if(pr[1]) $(pr[1]).focus(); return;}
     if(!folio) folio=nuevoFolio();
-    var txt=encodeURIComponent(ticket());
-    $("enviado").hidden=false; try{localStorage.setItem("mordida-enviado",folio);}catch(e){}
-    var movil=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    if(movil) location.href="https://wa.me/"+WHATS+"?text="+txt;
-    else window.open("https://web.whatsapp.com/send?phone="+WHATS+"&text="+txt,"_blank");
+    $("enviado").hidden=false; $("cap").hidden=pago!=="transferencia";
+    try{localStorage.setItem(LS+"-enviado",JSON.stringify({folio:folio,pago:pago}));}catch(e){}
+    abreWhats(ticket());
   });
-  $("nuevo").addEventListener("click",function(){cart=[];folio="";pago=null;ubic="";["paga","nota","dir","ref"].forEach(function(id){$(id).value="";});$("ubic").classList.remove("ok");$("ubic").textContent="📍 Mandar mi ubicación (opcional)";$("enviado").hidden=true;try{localStorage.removeItem("mordida-enviado");}catch(e){}save();render();cerrar("v-pedido");});
-  try{ if(localStorage.getItem("mordida-enviado")&&cart.length){ folio=localStorage.getItem("mordida-enviado"); $("enviado").hidden=false; } }catch(e){}
+  // Captura de la transferencia: se comparte directo a WhatsApp desde el celular; si no se puede, se manda por el chat
+  $("cap-archivo").addEventListener("change",function(){
+    var file=this.files&&this.files[0], m=$("cap-msg"); if(!file) return;
+    var txt="Captura de pago · pedido "+folio+" · "+C.negocio;
+    if(navigator.canShare&&navigator.canShare({files:[file]})){
+      navigator.share({files:[file],text:txt}).then(function(){m.textContent="Listo. Escoge el chat de "+C.negocio+" si no lo hiciste.";},function(){m.textContent="No se compartió. Mándala por el chat de WhatsApp de "+C.negocio+".";});
+    } else { m.textContent="Tu celular no deja mandarla desde aquí: ábrela en el chat de WhatsApp de "+C.negocio+" y mándala ahí."; }
+  });
+  $("cap-chat").addEventListener("click",function(){abreWhats("Te mando la captura de mi transferencia del pedido "+folio+" 👇");});
+  $("nuevo").addEventListener("click",function(){cart=[];folio="";pago=null;ubic="";["paga","nota","dir","ref"].forEach(function(id){$(id).value="";});$("ubic").classList.remove("ok");$("ubic").textContent="📍 Mandar mi ubicación (opcional)";$("enviado").hidden=true;try{localStorage.removeItem(LS+"-enviado");}catch(e){}save();render();cerrar("v-pedido");});
+  try{var en=JSON.parse(localStorage.getItem(LS+"-enviado")||"null"); if(en&&cart.length){folio=en.folio;pago=en.pago;$("enviado").hidden=false;$("cap").hidden=pago!=="transferencia";}}catch(e){}
   render();
 })();
+
 </script>
-</body>
-</html>
+</body></html>
